@@ -1,0 +1,106 @@
+[gd_scene load_steps=16 format=3 uid="uid://bj4uw2k2rtb5x"]
+
+[ext_resource type="Texture2D" uid="uid://cusq768x8sbmf" path="res://src/assets/frajola/Hurt (32 x 32).png" id="1_6w65s"]
+[ext_resource type="Script" path="res://src/scripts/frajola.gd" id="1_x54ro"]
+[ext_resource type="Texture2D" uid="uid://b71gf81elw5o" path="res://src/assets/frajola/Idle (32 x 32).png" id="2_aetyk"]
+[ext_resource type="Texture2D" uid="uid://cqb81ct81qbst" path="res://src/assets/frajola/Jumping (32 x 32).png" id="3_ghod1"]
+[ext_resource type="Texture2D" uid="uid://bl744qrjp7epv" path="res://src/assets/frajola/Running (32 x 32).png" id="4_ntbo6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvki"]
+size = Vector2(12, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xxib"]
+atlas = ExtResource("1_6w65s")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7mxg"]
+atlas = ExtResource("2_aetyk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rudpc"]
+atlas = ExtResource("2_aetyk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7txoh"]
+atlas = ExtResource("3_ghod1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw1uh"]
+atlas = ExtResource("4_ntbo6")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mx4cd"]
+atlas = ExtResource("4_ntbo6")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xbyh"]
+atlas = ExtResource("4_ntbo6")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx6rw"]
+atlas = ExtResource("4_ntbo6")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjwls"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xxib")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7mxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rudpc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7txoh")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw1uh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mx4cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xbyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx6rw")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="frajola" type="CharacterBody2D"]
+collision_mask = 2
+script = ExtResource("1_x54ro")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 9)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_1bvki")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_tjwls")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.427674
+
+[node name="remote" type="RemoteTransform2D" parent="."]
