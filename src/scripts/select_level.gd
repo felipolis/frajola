@@ -31,3 +31,42 @@ func _process(delta):
 
 func _on_back_pressed():
 	Global.goto_scene("res://src/interfaces/main_menu.tscn")
+
+func _on_level_01_pressed():
+	Global.goto_scene("res://src/levels/level_01.tscn")
+
+
+func _on_level_02_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_03_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_04_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_05_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_06_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_07_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_08_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_09_pressed():
+	pass # Replace with function body.
+
+
+func _on_level_10_pressed():
+	pass # Replace with function body.

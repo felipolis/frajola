@@ -17,9 +17,14 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
+	
 func _on_new_game_button_pressed():
-	pass # Replace with function body.
+	# Reseta todo o jogo
+	Global._reset_game()
+	
+	# Inicia o jogo
+	Global.goto_scene("res://src/levels/level_01.tscn")
+	
 
 func _on_select_level_button_pressed():
 	Global.goto_scene("res://src/interfaces/select_level.tscn")

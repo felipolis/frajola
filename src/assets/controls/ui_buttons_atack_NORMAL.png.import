@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ifl7injlj3uv"
-path="res://.godot/imported/run (32 x 32).png-a0b9d1de7fe560f24d10e1079e95ce8a.ctex"
+uid="uid://w88j3bc4a5k"
+path="res://.godot/imported/ui_buttons_atack_NORMAL.png-615a6e0aa9a77434f90c132d64cbc33d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/boss/run (32 x 32).png"
-dest_files=["res://.godot/imported/run (32 x 32).png-a0b9d1de7fe560f24d10e1079e95ce8a.ctex"]
+source_file="res://src/assets/controls/ui_buttons_atack_NORMAL.png"
+dest_files=["res://.godot/imported/ui_buttons_atack_NORMAL.png-615a6e0aa9a77434f90c132d64cbc33d.ctex"]
 
 [params]
 

@@ -4,10 +4,17 @@ var current_scene = null
 var levels = [true, false, false, false, false, false, false, false, false, false]
 var player_life = 7
 var player_bullets = 10
+var player_score = 0
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+
+func _reset_game():
+	levels = [true, false, false, false, false, false, false, false, false, false]
+	player_life = 7
+	player_bullets = 10
+	player_score = 0
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)

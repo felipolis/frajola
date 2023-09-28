@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d10st0653xgqk"
-path="res://.godot/imported/run (32 x 32).png-86087fb672151a37bb267c8f21f72be3.ctex"
+uid="uid://d14yt0jec6dkq"
+path="res://.godot/imported/ball (32 x 32).png-1020f57b5f5a8682dec3e6b78a796706.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/enemy/run (32 x 32).png"
-dest_files=["res://.godot/imported/run (32 x 32).png-86087fb672151a37bb267c8f21f72be3.ctex"]
+source_file="res://src/assets/ball/ball (32 x 32).png"
+dest_files=["res://.godot/imported/ball (32 x 32).png-1020f57b5f5a8682dec3e6b78a796706.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsg0u067awl87"]
+
+[ext_resource type="Script" path="res://src/scripts/hitbox.gd" id="1_3pgcv"]
+
+[node name="hitbox" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_3pgcv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

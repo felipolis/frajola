@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkemh8cur6lgb"
-path="res://.godot/imported/ball (32 x 32)5.png-020b897153537e61938a005b0c4c3328.ctex"
+uid="uid://dxi734lklth0h"
+path="res://.godot/imported/ui_buttons_atack.png-b98af1c04acdc75fdb54c06f809a407b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/assets/ball/ball (32 x 32)5.png"
-dest_files=["res://.godot/imported/ball (32 x 32)5.png-020b897153537e61938a005b0c4c3328.ctex"]
+source_file="res://src/assets/controls/ui_buttons_atack.png"
+dest_files=["res://.godot/imported/ui_buttons_atack.png-b98af1c04acdc75fdb54c06f809a407b.ctex"]
 
 [params]
 

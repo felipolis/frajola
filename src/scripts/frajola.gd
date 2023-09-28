@@ -7,11 +7,14 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping := false
 var direction
 var is_hurted := false
-var player_life := 10
 var knockback_vector := Vector2.ZERO
 
 @onready var animation := $anim as AnimatedSprite2D
 @onready var remote_tranform = $remote as RemoteTransform2D
+@onready var collision = $collision
+@onready var hitbox = $hurtbox/collision
+@onready var hurtbox_collision = $hurtbox/collision
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -30,6 +33,15 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		animation.scale.x = direction
+		collision.position.x = -direction * 4
+		hurtbox_collision.position.x = -direction * 4
+		if direction == 1:
+			$ray_right.position.x = 5
+			$ray_left.position.x = -13
+		elif direction == -1:
+			$ray_right.position.x = 13
+			$ray_left.position.x = -5
+			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -69,8 +81,10 @@ func _on_hurtbox_body_entered(body):
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
-	if player_life > 0:
-		player_life -= 1
+	if Global.player_life > 0:
+		Global.player_life -= 1
+		if Global.player_life == 0:
+			queue_free()
 	else:
 		queue_free()
 	
@@ -106,4 +120,4 @@ func _on_head_collider_body_entered(body):
 			body.break_sprite()
 		else:
 			body.animation_player.play("hit")
-			body.create_coin()
+			body.create_fish()

@@ -213,4 +213,14 @@ sprite_frames = SubResource("SpriteFrames_h2jy2")
 animation = &"lincking"
 autoplay = "lincking"
 
+[connection signal="pressed" from="levels/level_01" to="." method="_on_level_01_pressed"]
+[connection signal="pressed" from="levels/level_02" to="." method="_on_level_02_pressed"]
+[connection signal="pressed" from="levels/level_03" to="." method="_on_level_03_pressed"]
+[connection signal="pressed" from="levels/level_04" to="." method="_on_level_04_pressed"]
+[connection signal="pressed" from="levels/level_05" to="." method="_on_level_05_pressed"]
+[connection signal="pressed" from="levels/level_06" to="." method="_on_level_06_pressed"]
+[connection signal="pressed" from="levels/level_07" to="." method="_on_level_07_pressed"]
+[connection signal="pressed" from="levels/level_08" to="." method="_on_level_08_pressed"]
+[connection signal="pressed" from="levels/level_09" to="." method="_on_level_09_pressed"]
+[connection signal="pressed" from="levels/level_10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="back_button/back" to="." method="_on_back_pressed"]
