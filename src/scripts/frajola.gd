@@ -15,6 +15,7 @@ var knockback_vector := Vector2.ZERO
 @onready var hitbox = $hurtbox/collision
 @onready var hurtbox_collision = $hurtbox/collision
 
+signal frajola_has_died
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -83,10 +84,10 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 	
 	if Global.player_life > 0:
 		Global.player_life -= 1
-		if Global.player_life == 0:
-			queue_free()
-	else:
+		
+	if Global.player_life <= 0:
 		queue_free()
+		emit_signal("frajola_has_died")
 	
 	if knockback_force != Vector2.ZERO:
 		knockback_vector = knockback_force

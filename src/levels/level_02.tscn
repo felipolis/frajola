@@ -1,46 +1,46 @@
-[gd_scene load_steps=56 format=3 uid="uid://bitym7e4dfdl0"]
+[gd_scene load_steps=56 format=3 uid="uid://cem8j868s1b8r"]
 
-[ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_l5kir"]
-[ext_resource type="Texture2D" uid="uid://ddc71dycmdsad" path="res://src/assets/tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ybbpa"]
-[ext_resource type="Texture2D" uid="uid://xvv515o42o7h" path="res://src/assets/tilesets/1 - Grassland/Trees (16 x 16).png" id="2_84a0h"]
-[ext_resource type="PackedScene" uid="uid://bj4uw2k2rtb5x" path="res://src/characters/frajola.tscn" id="3_luun2"]
-[ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="5_1btn3"]
-[ext_resource type="Texture2D" uid="uid://s0ffb5jo7ch" path="res://src/assets/tilesets/1 - Grassland/background/3 - Cloud_cover_2.png" id="6_plfy8"]
-[ext_resource type="Texture2D" uid="uid://bs8qtcgm2r4q" path="res://src/assets/tilesets/1 - Grassland/background/2 - Cloud_cover_1.png" id="7_c7neo"]
-[ext_resource type="Shader" path="res://src/shaders/movement_clouds.gdshader" id="7_hvtvt"]
-[ext_resource type="Texture2D" uid="uid://behvkvlmyb1lv" path="res://src/assets/tilesets/1 - Grassland/background/1 - Foreground_scenery.png" id="8_mp3i0"]
-[ext_resource type="PackedScene" uid="uid://c1kf7suay2e86" path="res://src/prefabs/fish.tscn" id="10_4dmyj"]
-[ext_resource type="PackedScene" uid="uid://b77q5xnelilrx" path="res://src/characters/enemy.tscn" id="11_krrfv"]
-[ext_resource type="PackedScene" uid="uid://dn8lrv7pnbn8x" path="res://src/prefabs/break_box.tscn" id="12_kv4n1"]
-[ext_resource type="PackedScene" uid="uid://cd6qq8egcyauh" path="res://src/prefabs/falling_platform.tscn" id="13_8mnyl"]
-[ext_resource type="PackedScene" uid="uid://cbpeh0nkbkfdt" path="res://src/prefabs/moving_platform.tscn" id="14_asjqo"]
-[ext_resource type="Script" path="res://src/scripts/spikes_area.gd" id="15_cvn2h"]
-[ext_resource type="Texture2D" uid="uid://cj8vrsm5th07q" path="res://src/assets/tilesets/3 - Others/Spike.png" id="16_mcmkq"]
-[ext_resource type="Script" path="res://src/scripts/water_area.gd" id="17_5nvj3"]
-[ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="17_08byy"]
-[ext_resource type="Script" path="res://src/scripts/lava_area.gd" id="19_jynf2"]
-[ext_resource type="Texture2D" uid="uid://bsf7cwoubqa" path="res://src/assets/tilesets/3 - Others/Lava_frames (16 x 32).png" id="20_ce3sr"]
-[ext_resource type="PackedScene" uid="uid://b5bcvpjbn574" path="res://src/characters/boss.tscn" id="21_daf7o"]
-[ext_resource type="Texture2D" uid="uid://cld8ryadwotjk" path="res://src/assets/controls/ui_buttons_arrow_left_NORMAL.png" id="22_n3ve6"]
-[ext_resource type="Texture2D" uid="uid://cn33f25rt64fs" path="res://src/assets/controls/ui_buttons_arrow_left_PRESSED.png" id="23_rbkue"]
-[ext_resource type="Texture2D" uid="uid://cckxfxo3h2gr2" path="res://src/assets/controls/ui_buttons_arrow_right_NORMAL.png" id="24_gjfyp"]
-[ext_resource type="Texture2D" uid="uid://0gi3a2tncf8p" path="res://src/assets/controls/ui_buttons_arrow_right_PRESSED.png" id="25_6q3xo"]
-[ext_resource type="Texture2D" uid="uid://bt2bbi5ph3ygu" path="res://src/assets/controls/ui_buttons_arrow_up_NORMAL.png" id="26_ccdsr"]
-[ext_resource type="Texture2D" uid="uid://dd3lneny3vjvr" path="res://src/assets/controls/ui_buttons_arrow_up_PRESSED.png" id="27_x1ij8"]
-[ext_resource type="Texture2D" uid="uid://w88j3bc4a5k" path="res://src/assets/controls/ui_buttons_atack_NORMAL.png" id="28_haknq"]
-[ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="29_mer4p"]
-[ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="30_8oieb"]
-[ext_resource type="Script" path="res://src/scripts/hud_manager.gd" id="30_aplqi"]
-[ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="31_ytl1a"]
-[ext_resource type="Texture2D" uid="uid://dd76ta0l8oo6x" path="res://src/assets/ui/life-counter-icon.png" id="32_us5ji"]
-[ext_resource type="PackedScene" uid="uid://cqehrcaxvg2is" path="res://src/interfaces/pause_menu.tscn" id="34_dfb2p"]
-[ext_resource type="PackedScene" uid="uid://bivd306mvm071" path="res://src/prefabs/portal.tscn" id="35_n72lw"]
-[ext_resource type="Script" path="res://src/scripts/transition.gd" id="36_pvhuw"]
-[ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="36_tqqcc"]
-[ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="37_j0r1k"]
+[ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_ftb2n"]
+[ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="2_g0ja8"]
+[ext_resource type="Texture2D" uid="uid://bsf7cwoubqa" path="res://src/assets/tilesets/3 - Others/Lava_frames (16 x 32).png" id="3_eoksu"]
+[ext_resource type="Texture2D" uid="uid://ddc71dycmdsad" path="res://src/assets/tilesets/1 - Grassland/Terrain (16 x 16).png" id="4_v42mh"]
+[ext_resource type="Texture2D" uid="uid://xvv515o42o7h" path="res://src/assets/tilesets/1 - Grassland/Trees (16 x 16).png" id="5_cqlqr"]
+[ext_resource type="PackedScene" uid="uid://c1kf7suay2e86" path="res://src/prefabs/fish.tscn" id="6_aucso"]
+[ext_resource type="PackedScene" uid="uid://bivd306mvm071" path="res://src/prefabs/portal.tscn" id="7_r48bu"]
+[ext_resource type="PackedScene" uid="uid://bj4uw2k2rtb5x" path="res://src/characters/frajola.tscn" id="8_yk3ut"]
+[ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="9_va3v6"]
+[ext_resource type="Texture2D" uid="uid://s0ffb5jo7ch" path="res://src/assets/tilesets/1 - Grassland/background/3 - Cloud_cover_2.png" id="10_7l5ku"]
+[ext_resource type="Shader" path="res://src/shaders/movement_clouds.gdshader" id="11_lk7lg"]
+[ext_resource type="Texture2D" uid="uid://bs8qtcgm2r4q" path="res://src/assets/tilesets/1 - Grassland/background/2 - Cloud_cover_1.png" id="12_bcl2n"]
+[ext_resource type="Texture2D" uid="uid://behvkvlmyb1lv" path="res://src/assets/tilesets/1 - Grassland/background/1 - Foreground_scenery.png" id="13_iymbu"]
+[ext_resource type="PackedScene" uid="uid://b77q5xnelilrx" path="res://src/characters/enemy.tscn" id="14_uaaf8"]
+[ext_resource type="PackedScene" uid="uid://dn8lrv7pnbn8x" path="res://src/prefabs/break_box.tscn" id="15_xcsod"]
+[ext_resource type="PackedScene" uid="uid://cbpeh0nkbkfdt" path="res://src/prefabs/moving_platform.tscn" id="16_ffbtp"]
+[ext_resource type="PackedScene" uid="uid://cd6qq8egcyauh" path="res://src/prefabs/falling_platform.tscn" id="17_ts6mv"]
+[ext_resource type="Script" path="res://src/scripts/spikes_area.gd" id="18_g8dpl"]
+[ext_resource type="Texture2D" uid="uid://cj8vrsm5th07q" path="res://src/assets/tilesets/3 - Others/Spike.png" id="19_mvj85"]
+[ext_resource type="Script" path="res://src/scripts/water_area.gd" id="20_b7byh"]
+[ext_resource type="Script" path="res://src/scripts/lava_area.gd" id="21_f40u3"]
+[ext_resource type="PackedScene" uid="uid://b5bcvpjbn574" path="res://src/characters/boss.tscn" id="22_8tfyw"]
+[ext_resource type="Texture2D" uid="uid://cld8ryadwotjk" path="res://src/assets/controls/ui_buttons_arrow_left_NORMAL.png" id="23_6cylp"]
+[ext_resource type="Texture2D" uid="uid://cn33f25rt64fs" path="res://src/assets/controls/ui_buttons_arrow_left_PRESSED.png" id="24_6jpu3"]
+[ext_resource type="Texture2D" uid="uid://cckxfxo3h2gr2" path="res://src/assets/controls/ui_buttons_arrow_right_NORMAL.png" id="25_k7w1p"]
+[ext_resource type="Texture2D" uid="uid://0gi3a2tncf8p" path="res://src/assets/controls/ui_buttons_arrow_right_PRESSED.png" id="26_bru6x"]
+[ext_resource type="Texture2D" uid="uid://bt2bbi5ph3ygu" path="res://src/assets/controls/ui_buttons_arrow_up_NORMAL.png" id="27_6eser"]
+[ext_resource type="Texture2D" uid="uid://dd3lneny3vjvr" path="res://src/assets/controls/ui_buttons_arrow_up_PRESSED.png" id="28_x3rub"]
+[ext_resource type="Texture2D" uid="uid://w88j3bc4a5k" path="res://src/assets/controls/ui_buttons_atack_NORMAL.png" id="29_oglby"]
+[ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="30_wwawt"]
+[ext_resource type="Script" path="res://src/scripts/hud_manager.gd" id="31_vd4ec"]
+[ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="32_hcael"]
+[ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="33_nkgj7"]
+[ext_resource type="Texture2D" uid="uid://dd76ta0l8oo6x" path="res://src/assets/ui/life-counter-icon.png" id="34_2upme"]
+[ext_resource type="PackedScene" uid="uid://cqehrcaxvg2is" path="res://src/interfaces/pause_menu.tscn" id="35_rraxb"]
+[ext_resource type="Script" path="res://src/scripts/transition.gd" id="36_wupvx"]
+[ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="37_rtt1g"]
+[ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="38_2oscd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g7oy"]
-texture = ExtResource("17_08byy")
+texture = ExtResource("2_g0ja8")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -57,7 +57,7 @@ texture = ExtResource("17_08byy")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8agnf"]
-texture = ExtResource("20_ce3sr")
+texture = ExtResource("3_eoksu")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -88,7 +88,7 @@ texture = ExtResource("20_ce3sr")
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqct7"]
-texture = ExtResource("1_ybbpa")
+texture = ExtResource("4_v42mh")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -248,7 +248,7 @@ texture = ExtResource("1_ybbpa")
 5:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kurbc"]
-texture = ExtResource("2_84a0h")
+texture = ExtResource("5_cqlqr")
 1:1/size_in_atlas = Vector2i(3, 3)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -288,7 +288,7 @@ texture = ExtResource("2_84a0h")
 3:5/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gc2ua"]
-texture = ExtResource("1_ybbpa")
+texture = ExtResource("4_v42mh")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
@@ -408,7 +408,7 @@ sources/0 = SubResource("TileSetAtlasSource_4g7oy")
 sources/1 = SubResource("TileSetAtlasSource_8agnf")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f5jbg"]
-shader = ExtResource("7_hvtvt")
+shader = ExtResource("11_lk7lg")
 shader_parameter/move_speed = 0.05
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_373vt"]
@@ -495,14 +495,14 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ry1uh"]
-shader = ExtResource("36_tqqcc")
+shader = ExtResource("37_rtt1g")
 shader_parameter/lines = 10.0
 shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(1, 1, 1, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
 [node name="Level01" type="Node2D"]
-script = ExtResource("1_l5kir")
+script = ExtResource("1_ftb2n")
 
 [node name="level" type="TileMap" parent="."]
 position = Vector2(7, 0)
@@ -520,21 +520,20 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="fishes" type="Node2D" parent="."]
 
-[node name="fish" parent="fishes" instance=ExtResource("10_4dmyj")]
+[node name="fish" parent="fishes" instance=ExtResource("6_aucso")]
 position = Vector2(400, 512)
 
-[node name="fish2" parent="fishes" instance=ExtResource("10_4dmyj")]
+[node name="fish2" parent="fishes" instance=ExtResource("6_aucso")]
 position = Vector2(432, 512)
 
-[node name="fish3" parent="fishes" instance=ExtResource("10_4dmyj")]
+[node name="fish3" parent="fishes" instance=ExtResource("6_aucso")]
 position = Vector2(464, 512)
 
-[node name="portal" parent="." instance=ExtResource("35_n72lw")]
+[node name="portal" parent="." instance=ExtResource("7_r48bu")]
 position = Vector2(1295, 504)
 scale = Vector2(5, 5)
-next_level = "res://src/levels/level_02.tscn"
 
-[node name="frajola" parent="." instance=ExtResource("3_luun2")]
+[node name="frajola" parent="." instance=ExtResource("8_yk3ut")]
 position = Vector2(183, 457)
 
 [node name="camera" type="Camera2D" parent="."]
@@ -555,7 +554,7 @@ motion_mirroring = Vector2(432, 0)
 [node name="texture" type="Sprite2D" parent="grassland/04"]
 position = Vector2(1, 0)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("5_1btn3")
+texture = ExtResource("9_va3v6")
 centered = false
 
 [node name="03" type="ParallaxLayer" parent="grassland"]
@@ -566,7 +565,7 @@ motion_mirroring = Vector2(432, 0)
 [node name="texture" type="Sprite2D" parent="grassland/03"]
 position = Vector2(1, 0)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("6_plfy8")
+texture = ExtResource("10_7l5ku")
 centered = false
 
 [node name="02" type="ParallaxLayer" parent="grassland"]
@@ -579,7 +578,7 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_f5jbg")
 position = Vector2(2, 0)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("7_c7neo")
+texture = ExtResource("12_bcl2n")
 centered = false
 
 [node name="01" type="ParallaxLayer" parent="grassland"]
@@ -590,49 +589,49 @@ motion_mirroring = Vector2(432, 0)
 [node name="texture" type="Sprite2D" parent="grassland/01"]
 position = Vector2(1, 0)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("8_mp3i0")
+texture = ExtResource("13_iymbu")
 centered = false
 
-[node name="enemy" parent="." instance=ExtResource("11_krrfv")]
+[node name="enemy" parent="." instance=ExtResource("14_uaaf8")]
 position = Vector2(384, 526)
 patrol_distance = 120
 patrol_state = 1
 
 [node name="break_boxes" type="Node2D" parent="."]
 
-[node name="break_box" parent="break_boxes" instance=ExtResource("12_kv4n1")]
+[node name="break_box" parent="break_boxes" instance=ExtResource("15_xcsod")]
 position = Vector2(496, 440)
 
-[node name="break_box2" parent="break_boxes" instance=ExtResource("12_kv4n1")]
+[node name="break_box2" parent="break_boxes" instance=ExtResource("15_xcsod")]
 position = Vector2(520, 440)
 
-[node name="break_box3" parent="break_boxes" instance=ExtResource("12_kv4n1")]
+[node name="break_box3" parent="break_boxes" instance=ExtResource("15_xcsod")]
 position = Vector2(544, 440)
 
-[node name="break_box4" parent="break_boxes" instance=ExtResource("12_kv4n1")]
+[node name="break_box4" parent="break_boxes" instance=ExtResource("15_xcsod")]
 position = Vector2(568, 440)
 
 [node name="moving_platforms" type="Node2D" parent="."]
 
-[node name="moving_platform2" parent="moving_platforms" instance=ExtResource("14_asjqo")]
+[node name="moving_platform2" parent="moving_platforms" instance=ExtResource("16_ffbtp")]
 position = Vector2(368, 360)
 
 [node name="falling_platforms" type="Node2D" parent="."]
 
-[node name="falling_platform" parent="falling_platforms" instance=ExtResource("13_8mnyl")]
+[node name="falling_platform" parent="falling_platforms" instance=ExtResource("17_ts6mv")]
 position = Vector2(696, 416)
 
-[node name="falling_platform2" parent="falling_platforms" instance=ExtResource("13_8mnyl")]
+[node name="falling_platform2" parent="falling_platforms" instance=ExtResource("17_ts6mv")]
 position = Vector2(696, 360)
 
 [node name="spikes_area" type="Area2D" parent="."]
 position = Vector2(843, 508)
 collision_layer = 2
-script = ExtResource("15_cvn2h")
+script = ExtResource("18_g8dpl")
 
 [node name="spikes" type="Sprite2D" parent="spikes_area"]
 texture_repeat = 2
-texture = ExtResource("16_mcmkq")
+texture = ExtResource("19_mvj85")
 region_enabled = true
 region_rect = Rect2(0, 8, 40, 8)
 
@@ -642,11 +641,11 @@ shape = SubResource("RectangleShape2D_373vt")
 [node name="water_area" type="Area2D" parent="."]
 position = Vector2(991, 568)
 collision_layer = 2
-script = ExtResource("17_5nvj3")
+script = ExtResource("20_b7byh")
 
 [node name="water" type="Sprite2D" parent="water_area"]
 texture_repeat = 2
-texture = ExtResource("17_08byy")
+texture = ExtResource("2_g0ja8")
 hframes = 2
 vframes = 2
 region_enabled = true
@@ -666,11 +665,11 @@ libraries = {
 [node name="lava_area" type="Area2D" parent="."]
 position = Vector2(1151, 568)
 collision_layer = 2
-script = ExtResource("19_jynf2")
+script = ExtResource("21_f40u3")
 
 [node name="lava" type="Sprite2D" parent="lava_area"]
 texture_repeat = 2
-texture = ExtResource("20_ce3sr")
+texture = ExtResource("3_eoksu")
 hframes = 4
 vframes = 2
 region_enabled = true
@@ -686,7 +685,7 @@ libraries = {
 "": SubResource("AnimationLibrary_v4p4f")
 }
 
-[node name="boss" parent="." instance=ExtResource("21_daf7o")]
+[node name="boss" parent="." instance=ExtResource("22_8tfyw")]
 position = Vector2(400, 485)
 
 [node name="controls" type="CanvasLayer" parent="."]
@@ -694,32 +693,32 @@ position = Vector2(400, 485)
 [node name="ui_left" type="TouchScreenButton" parent="controls"]
 position = Vector2(7, 535)
 scale = Vector2(3.25, 3.25)
-texture_normal = ExtResource("22_n3ve6")
-texture_pressed = ExtResource("23_rbkue")
+texture_normal = ExtResource("23_6cylp")
+texture_pressed = ExtResource("24_6jpu3")
 action = "ui_left"
 visibility_mode = 1
 
 [node name="ui_right" type="TouchScreenButton" parent="controls"]
 position = Vector2(128, 535)
 scale = Vector2(3.25, 3.25)
-texture_normal = ExtResource("24_gjfyp")
-texture_pressed = ExtResource("25_6q3xo")
+texture_normal = ExtResource("25_k7w1p")
+texture_pressed = ExtResource("26_bru6x")
 action = "ui_right"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controls"]
 position = Vector2(904, 535)
 scale = Vector2(3.25, 3.25)
-texture_normal = ExtResource("26_ccdsr")
-texture_pressed = ExtResource("27_x1ij8")
+texture_normal = ExtResource("27_6eser")
+texture_pressed = ExtResource("28_x3rub")
 action = "ui_accept"
 visibility_mode = 1
 
 [node name="ui_atack" type="TouchScreenButton" parent="controls"]
 position = Vector2(1028, 535)
 scale = Vector2(3.25, 3.25)
-texture_normal = ExtResource("28_haknq")
-texture_pressed = ExtResource("29_mer4p")
+texture_normal = ExtResource("29_oglby")
+texture_pressed = ExtResource("30_wwawt")
 visibility_mode = 1
 
 [node name="HUD" type="CanvasLayer" parent="."]
@@ -734,7 +733,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("30_aplqi")
+script = ExtResource("31_vd4ec")
 default_seconds = 59
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
@@ -764,7 +763,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("30_8oieb")
+texture = ExtResource("32_hcael")
 expand_mode = 1
 
 [node name="balls_counter" type="Label" parent="HUD/control/container/infos_container/balls_container"]
@@ -773,7 +772,7 @@ size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_constants/line_spacing = 20
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "0000"
 vertical_alignment = 1
@@ -789,7 +788,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("32_us5ji")
+texture = ExtResource("34_2upme")
 expand_mode = 1
 
 [node name="life_separator" type="Label" parent="HUD/control/container/infos_container/life_container"]
@@ -798,7 +797,7 @@ size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "X"
 
@@ -808,7 +807,7 @@ size_flags_vertical = 8
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_constants/line_spacing = 14
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "03"
 
@@ -821,7 +820,7 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "TIMER:"
 vertical_alignment = 1
@@ -830,7 +829,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "00:00"
 vertical_alignment = 1
@@ -844,7 +843,7 @@ size_flags_vertical = 0
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "SCORE:"
 vertical_alignment = 1
@@ -853,15 +852,15 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 7
-theme_override_fonts/font = ExtResource("31_ytl1a")
+theme_override_fonts/font = ExtResource("33_nkgj7")
 theme_override_font_sizes/font_size = 28
 text = "000000"
 vertical_alignment = 1
 
-[node name="pause_menu" parent="." instance=ExtResource("34_dfb2p")]
+[node name="pause_menu" parent="." instance=ExtResource("35_rraxb")]
 
 [node name="transition" type="CanvasLayer" parent="."]
-script = ExtResource("36_pvhuw")
+script = ExtResource("36_wupvx")
 
 [node name="color_rect" type="ColorRect" parent="transition"]
 material = SubResource("ShaderMaterial_ry1uh")
@@ -871,7 +870,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
-script = ExtResource("37_j0r1k")
+script = ExtResource("38_2oscd")
 
 [connection signal="body_entered" from="spikes_area" to="spikes_area" method="_on_body_entered"]
 [connection signal="body_entered" from="water_area" to="water_area" method="_on_body_entered"]

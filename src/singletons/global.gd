@@ -3,7 +3,7 @@ extends Node
 var current_scene = null
 var levels = [true, false, false, false, false, false, false, false, false, false]
 var player_life = 7
-var player_bullets = 10
+var player_bullets = 0
 var player_score = 0
 
 func _ready():
@@ -13,7 +13,7 @@ func _ready():
 func _reset_game():
 	levels = [true, false, false, false, false, false, false, false, false, false]
 	player_life = 7
-	player_bullets = 10
+	player_bullets = 0
 	player_score = 0
 
 func goto_scene(path):

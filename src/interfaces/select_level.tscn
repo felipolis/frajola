@@ -203,8 +203,10 @@ offset_right = 40.0
 offset_bottom = 648.0
 
 [node name="back" type="Button" parent="back_button"]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 icon = ExtResource("7_w3cyu")
+expand_icon = true
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(587, 413)
