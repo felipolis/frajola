@@ -27,6 +27,11 @@ func _physics_process(delta):
 		is_jumping = true
 	elif is_on_floor():
 		is_jumping = false
+	
+	if Input.is_action_just_pressed("ui_down"):
+		collision.disabled = true
+		await get_tree().create_timer(0.07).timeout
+		collision.disabled = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
