@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bitym7e4dfdl0"]
+[gd_scene load_steps=59 format=3 uid="uid://bitym7e4dfdl0"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_l5kir"]
 [ext_resource type="Texture2D" uid="uid://ddc71dycmdsad" path="res://src/assets/tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ybbpa"]
@@ -20,13 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="17_08byy"]
 [ext_resource type="Script" path="res://src/scripts/lava_area.gd" id="19_jynf2"]
 [ext_resource type="Texture2D" uid="uid://bsf7cwoubqa" path="res://src/assets/tilesets/3 - Others/Lava_frames (16 x 32).png" id="20_ce3sr"]
-[ext_resource type="PackedScene" uid="uid://b5bcvpjbn574" path="res://src/characters/boss.tscn" id="21_daf7o"]
 [ext_resource type="Texture2D" uid="uid://cld8ryadwotjk" path="res://src/assets/controls/ui_buttons_arrow_left_NORMAL.png" id="22_n3ve6"]
 [ext_resource type="Texture2D" uid="uid://cn33f25rt64fs" path="res://src/assets/controls/ui_buttons_arrow_left_PRESSED.png" id="23_rbkue"]
 [ext_resource type="Texture2D" uid="uid://cckxfxo3h2gr2" path="res://src/assets/controls/ui_buttons_arrow_right_NORMAL.png" id="24_gjfyp"]
 [ext_resource type="Texture2D" uid="uid://0gi3a2tncf8p" path="res://src/assets/controls/ui_buttons_arrow_right_PRESSED.png" id="25_6q3xo"]
 [ext_resource type="Texture2D" uid="uid://bt2bbi5ph3ygu" path="res://src/assets/controls/ui_buttons_arrow_up_NORMAL.png" id="26_ccdsr"]
+[ext_resource type="Texture2D" uid="uid://dm45xfbei3k81" path="res://src/assets/controls/ui_buttons_pause_NORMAL.png" id="27_h40r0"]
 [ext_resource type="Texture2D" uid="uid://dd3lneny3vjvr" path="res://src/assets/controls/ui_buttons_arrow_up_PRESSED.png" id="27_x1ij8"]
+[ext_resource type="Texture2D" uid="uid://bvpqk2o0wqsx" path="res://src/assets/controls/ui_buttons_pause_PRESSED.png.png" id="28_cqrme"]
 [ext_resource type="Texture2D" uid="uid://w88j3bc4a5k" path="res://src/assets/controls/ui_buttons_atack_NORMAL.png" id="28_haknq"]
 [ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="29_mer4p"]
 [ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="30_8oieb"]
@@ -37,7 +38,9 @@
 [ext_resource type="PackedScene" uid="uid://bivd306mvm071" path="res://src/prefabs/portal.tscn" id="35_n72lw"]
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="36_pvhuw"]
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="36_tqqcc"]
+[ext_resource type="PackedScene" uid="uid://ccgqxkwf5npbv" path="res://src/interfaces/death_menu.tscn" id="37_5sly8"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="37_j0r1k"]
+[ext_resource type="PackedScene" uid="uid://c3ppu20ikekpy" path="res://src/interfaces/victory_menu.tscn" id="40_8b11a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4g7oy"]
 texture = ExtResource("17_08byy")
@@ -532,7 +535,6 @@ position = Vector2(464, 512)
 [node name="portal" parent="." instance=ExtResource("35_n72lw")]
 position = Vector2(1295, 504)
 scale = Vector2(5, 5)
-next_level = "res://src/levels/level_02.tscn"
 
 [node name="frajola" parent="." instance=ExtResource("3_luun2")]
 position = Vector2(183, 457)
@@ -686,9 +688,6 @@ libraries = {
 "": SubResource("AnimationLibrary_v4p4f")
 }
 
-[node name="boss" parent="." instance=ExtResource("21_daf7o")]
-position = Vector2(400, 485)
-
 [node name="controls" type="CanvasLayer" parent="."]
 
 [node name="ui_left" type="TouchScreenButton" parent="controls"]
@@ -705,6 +704,14 @@ scale = Vector2(3.25, 3.25)
 texture_normal = ExtResource("24_gjfyp")
 texture_pressed = ExtResource("25_6q3xo")
 action = "ui_right"
+visibility_mode = 1
+
+[node name="ui_pause" type="TouchScreenButton" parent="controls"]
+position = Vector2(1108, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("27_h40r0")
+texture_pressed = ExtResource("28_cqrme")
+action = "ui_cancel"
 visibility_mode = 1
 
 [node name="ui_up" type="TouchScreenButton" parent="controls"]
@@ -858,9 +865,14 @@ theme_override_font_sizes/font_size = 28
 text = "000000"
 vertical_alignment = 1
 
+[node name="victory_menu" parent="." instance=ExtResource("40_8b11a")]
+
+[node name="death_menu" parent="." instance=ExtResource("37_5sly8")]
+
 [node name="pause_menu" parent="." instance=ExtResource("34_dfb2p")]
 
 [node name="transition" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("36_pvhuw")
 
 [node name="color_rect" type="ColorRect" parent="transition"]

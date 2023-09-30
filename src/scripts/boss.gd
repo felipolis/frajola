@@ -4,6 +4,8 @@ extends CharacterBody2D
 
 @onready var anim = $anim as AnimationPlayer
 @export var boss_score := 1000
+@onready var transition = $"../transition"
+@export var next_level = ""
 
 const SPEED = 3000.0
 const JUMP_VELOCITY = -400.0
@@ -12,8 +14,14 @@ var _frajola: CharacterBody2D = null
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const JUMP_DISTANCE_THRESHOLD = 100.0
 
+var current_level
+signal frajola_has_passed
+
 var time_stuck = 0.0  # Variável para rastrear o tempo em que o inimigo está preso
 const MAX_TIME_STUCK = 2.0  # Tempo máximo permitido para estar preso antes de pular
+
+func _ready():
+	current_level = Global.get_last_level()
 
 func _physics_process(delta):
 	if _frajola != null:
@@ -62,6 +70,8 @@ func _on_anim_animation_finished(anim_name):
 	if anim_name == "die":
 		Global.player_score += boss_score
 		queue_free()
+		emit_signal("frajola_has_passed")
+		_frajola.queue_free()
 	if anim_name == "hurt":
 		anim.play("walk")
 		

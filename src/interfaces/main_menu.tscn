@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://hiyw54obfhn"]
+[gd_scene load_steps=19 format=3 uid="uid://hiyw54obfhn"]
 
 [ext_resource type="Script" path="res://src/scripts/main_menu.gd" id="1_3s4d2"]
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_u2n3n"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://behvkvlmyb1lv" path="res://src/assets/tilesets/1 - Grassland/background/1 - Foreground_scenery.png" id="4_e41sn"]
 [ext_resource type="Texture2D" uid="uid://d2kh2br6npxgw" path="res://src/assets/frajola/Licking (32 x 32).png" id="6_xpywi"]
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="7_tl57e"]
+[ext_resource type="Script" path="res://src/scripts/transition.gd" id="9_7klxw"]
+[ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="10_gvmmh"]
+[ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="11_1jm2i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r36pv"]
 shader = ExtResource("3_5mnp3")
@@ -48,6 +51,13 @@ animations = [{
 "name": &"lincking",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_alq3a"]
+shader = ExtResource("10_gvmmh")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(1, 1, 1, 1)
+shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -91,8 +101,8 @@ scale = Vector2(4, 3.11538)
 texture = ExtResource("4_e41sn")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(792, 208)
-scale = Vector2(26.125, 26.125)
+position = Vector2(872, 144)
+scale = Vector2(29.3125, 29.3125)
 sprite_frames = SubResource("SpriteFrames_2jsu7")
 animation = &"lincking"
 autoplay = "lincking"
@@ -103,19 +113,29 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -436.0
+offset_left = -544.0
 offset_top = 46.0
-offset_right = 436.0
-offset_bottom = 113.0
+offset_right = 328.0
+offset_bottom = 136.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="title"]
+[node name="title" type="Label" parent="title"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 0
 theme_override_fonts/font = ExtResource("7_tl57e")
-theme_override_font_sizes/font_size = 64
-text = "The Frajola's Adventure"
+theme_override_font_sizes/font_size = 90
+text = "Seven Lives"
+uppercase = true
+
+[node name="subtitle" type="Label" parent="title"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 30
+text = "The Frajola's Adventures"
 uppercase = true
 
 [node name="buttons" type="VBoxContainer" parent="."]
@@ -124,8 +144,8 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = -264.0
-offset_right = 339.0
+offset_top = -324.0
+offset_right = 504.0
 offset_bottom = -28.0
 grow_vertical = 0
 
@@ -147,13 +167,34 @@ theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Options"
 
+[node name="options_credits" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 47
+text = "Credits"
+
 [node name="quit_button" type="Button" parent="buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Quit"
 
+[node name="transition" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("9_7klxw")
+
+[node name="color_rect" type="ColorRect" parent="transition"]
+material = SubResource("ShaderMaterial_alq3a")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("11_1jm2i")
+
 [connection signal="pressed" from="buttons/new_game_button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="buttons/select_level_button" to="." method="_on_select_level_button_pressed"]
 [connection signal="pressed" from="buttons/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="buttons/options_credits" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="buttons/quit_button" to="." method="_on_quit_button_pressed"]

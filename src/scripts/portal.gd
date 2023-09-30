@@ -2,6 +2,9 @@ extends Area2D
 
 @onready var transition = $"../transition"
 @export var next_level = ""
+@onready var frajola = $"../frajola"
+
+signal frajola_has_passed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +17,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	if body.name == "frajola" and next_level != "":
-		transition.change_scene(next_level)
-	else:
-		print("No scene loaded")
+	if body.name == "frajola":
+		frajola.queue_free()
+		emit_signal("frajola_has_passed")
 		

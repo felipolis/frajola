@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bqkgnid0unbgu"]
+[gd_scene load_steps=20 format=3 uid="uid://bqkgnid0unbgu"]
 
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_1kp71"]
 [ext_resource type="Script" path="res://src/scripts/select_level.gd" id="1_27lne"]
@@ -9,6 +9,9 @@
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="6_w3cb0"]
 [ext_resource type="Texture2D" uid="uid://bc8806k0vsekq" path="res://src/assets/ui/back.png" id="7_w3cyu"]
 [ext_resource type="Texture2D" uid="uid://d2kh2br6npxgw" path="res://src/assets/frajola/Licking (32 x 32).png" id="9_bw3x8"]
+[ext_resource type="Script" path="res://src/scripts/transition.gd" id="10_kb8ah"]
+[ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="11_80vwj"]
+[ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="12_h8qnn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l8cxl"]
 shader = ExtResource("3_n1njn")
@@ -49,6 +52,13 @@ animations = [{
 "name": &"lincking",
 "speed": 5.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r015q"]
+shader = ExtResource("11_80vwj")
+shader_parameter/lines = 10.0
+shader_parameter/threshold = 0.0
+shader_parameter/line_color_a = Color(1, 1, 1, 1)
+shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
 [node name="SelectLevel" type="Control"]
 layout_mode = 3
@@ -214,6 +224,20 @@ scale = Vector2(13.3125, 13.3125)
 sprite_frames = SubResource("SpriteFrames_h2jy2")
 animation = &"lincking"
 autoplay = "lincking"
+
+[node name="transition" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("10_kb8ah")
+
+[node name="color_rect" type="ColorRect" parent="transition"]
+material = SubResource("ShaderMaterial_r015q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("12_h8qnn")
 
 [connection signal="pressed" from="levels/level_01" to="." method="_on_level_01_pressed"]
 [connection signal="pressed" from="levels/level_02" to="." method="_on_level_02_pressed"]

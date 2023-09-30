@@ -2,9 +2,14 @@ extends Node
 
 var current_scene = null
 var levels = [true, false, false, false, false, false, false, false, false, false]
+
 var player_life = 7
 var player_bullets = 0
 var player_score = 0
+
+var backup_lives = 7
+var backup_bullets = 0
+var backup_score = 0
 
 func _ready():
 	var root = get_tree().root
@@ -15,6 +20,22 @@ func _reset_game():
 	player_life = 7
 	player_bullets = 0
 	player_score = 0
+
+func get_backup():
+	player_life = backup_lives
+	player_bullets = backup_bullets
+	player_score = backup_score
+
+func set_backup():
+	backup_lives = player_life
+	backup_bullets = player_bullets
+	backup_score = player_score
+	
+	for level in levels.size():
+		if not levels[level]:
+			levels[level] = true
+	
+	
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)

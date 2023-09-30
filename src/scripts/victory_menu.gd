@@ -1,31 +1,37 @@
 extends CanvasLayer
 
-@onready var resume_btn = $menu_holder/resume_btn
 @onready var transition = $"../transition"
+@export var next_level = ""
+@onready var portal = $"../portal"
+@onready var boss = $"../boss"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	visible = false
+	if boss:
+		boss.frajola_has_passed.connect(victory)
+	
+	if portal:
+		portal.frajola_has_passed.connect(victory)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func victory():
+	Global.set_backup()
+	visible = true
 
-func _unhandled_input(event):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().paused = true
-		visible = true
-		# resume_btn.grab_focus()
+func _on_next_btn_pressed():
+	if next_level:
+		transition.visible = true
+		transition.change_scene(next_level)
+	else:
+		print("Select the scene!")
 
-func _on_resume_btn_pressed():
-	get_tree().paused = false
-	visible = false
 
 func _on_back_btn_pressed():
-	get_tree().paused = false
-	visible = false
-	Global.get_backup()
 	transition.visible = true
 	transition.change_scene("res://src/interfaces/main_menu.tscn")
 

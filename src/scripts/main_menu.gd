@@ -2,6 +2,7 @@ class_name MainMenu
 extends Control
 
 @onready var background_terrain = $"background/01/texture"
+@onready var transition = $transition
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,11 +24,13 @@ func _on_new_game_button_pressed():
 	Global._reset_game()
 	
 	# Inicia o jogo
-	Global.goto_scene("res://src/levels/level_01.tscn")
+	transition.visible = true
+	transition.change_scene("res://src/levels/level_01.tscn")
 	
 
 func _on_select_level_button_pressed():
-	Global.goto_scene("res://src/interfaces/select_level.tscn")
+	transition.visible = true
+	transition.change_scene("res://src/interfaces/select_level.tscn")
 
 func _on_options_button_pressed():
 	pass # Replace with function body.
