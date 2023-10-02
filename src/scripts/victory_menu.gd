@@ -20,6 +20,7 @@ func _process(delta):
 	pass
 	
 func victory():
+	print("OI")
 	Global.set_backup()
 	visible = true
 

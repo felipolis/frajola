@@ -533,7 +533,7 @@ position = Vector2(432, 512)
 position = Vector2(464, 512)
 
 [node name="portal" parent="." instance=ExtResource("35_n72lw")]
-position = Vector2(1295, 504)
+position = Vector2(1295, 473)
 scale = Vector2(5, 5)
 
 [node name="frajola" parent="." instance=ExtResource("3_luun2")]

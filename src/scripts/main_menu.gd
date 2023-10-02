@@ -7,8 +7,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var current_level = Global.get_last_level()
 	if background_terrain != null:
-		var current_level = Global.get_last_level()
 		if current_level <= 5:
 			background_terrain.texture = ResourceLoader.load("res://src/assets/tilesets/1 - Grassland/background/1 - Foreground_scenery.png")
 		else:

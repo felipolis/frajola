@@ -30,10 +30,10 @@ func set_backup():
 	backup_lives = player_life
 	backup_bullets = player_bullets
 	backup_score = player_score
-	
 	for level in levels.size():
 		if not levels[level]:
 			levels[level] = true
+			break
 	
 	
 
@@ -58,5 +58,5 @@ func _deferred_goto_scene(path):
 
 func get_last_level():
 	for level in levels.size():
-		if not levels[level]:
+		if levels[level] == false:
 			return level
