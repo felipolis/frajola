@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://hiyw54obfhn"]
+[gd_scene load_steps=20 format=3 uid="uid://hiyw54obfhn"]
 
 [ext_resource type="Script" path="res://src/scripts/main_menu.gd" id="1_3s4d2"]
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_u2n3n"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="9_7klxw"]
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="10_gvmmh"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="11_1jm2i"]
+[ext_resource type="AudioStream" uid="uid://42th6de48rrr" path="res://src/assets/sounds/main_menu.mp3" id="12_r1hko"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r36pv"]
 shader = ExtResource("3_5mnp3")
@@ -192,6 +193,57 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("11_1jm2i")
+
+[node name="score" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 32.0
+offset_top = 264.0
+offset_right = 269.0
+offset_bottom = 320.0
+
+[node name="current_container" type="HBoxContainer" parent="score"]
+layout_mode = 2
+
+[node name="current_Label" type="Label" parent="score/current_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 20
+text = "Current Score:"
+
+[node name="current_value" type="Label" parent="score/current_container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 16
+text = "10334343"
+
+[node name="record_container" type="HBoxContainer" parent="score"]
+layout_mode = 2
+
+[node name="record_Label" type="Label" parent="score/record_container"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 20
+text = "Record:"
+
+[node name="record_value" type="Label" parent="score/record_container"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 16
+text = "10334343"
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_r1hko")
+autoplay = true
 
 [connection signal="pressed" from="buttons/new_game_button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="buttons/select_level_button" to="." method="_on_select_level_button_pressed"]

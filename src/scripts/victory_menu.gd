@@ -20,7 +20,7 @@ func _process(delta):
 	pass
 	
 func victory():
-	print("OI")
+	# TODO: Setar o score record caso seja a ultima fase
 	Global.set_backup()
 	visible = true
 

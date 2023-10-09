@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b77q5xnelilrx"]
+[gd_scene load_steps=16 format=3 uid="uid://b77q5xnelilrx"]
 
 [ext_resource type="Script" path="res://src/scripts/enemy.gd" id="1_nb86n"]
 [ext_resource type="Texture2D" uid="uid://d10st0653xgqk" path="res://src/assets/enemy/walk (32 x 32).png" id="2_7qic6"]
@@ -223,6 +223,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qal3a"]
 size = Vector2(12, 2)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohs3a"]
+size = Vector2(3, 8)
+
 [node name="enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 2
@@ -254,5 +257,18 @@ collision_mask = 6
 position = Vector2(1, -7)
 shape = SubResource("RectangleShape2D_qal3a")
 debug_color = Color(0.901961, 0.184314, 0.611765, 0.419608)
+
+[node name="hitbox2" parent="." instance=ExtResource("6_7tl74")]
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2(-6.5, -4)
+shape = SubResource("RectangleShape2D_ohs3a")
+debug_color = Color(0.530155, 0.571088, 0, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox2"]
+position = Vector2(7, -4)
+shape = SubResource("RectangleShape2D_ohs3a")
+debug_color = Color(0.530155, 0.571088, 0, 0.42)
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

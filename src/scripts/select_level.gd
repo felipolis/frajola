@@ -47,36 +47,54 @@ func _on_level_01_pressed():
 
 
 func _on_level_02_pressed():
-	pass # Replace with function body.
+	if current_level == 2:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_02.tscn")
 
 
 func _on_level_03_pressed():
-	pass # Replace with function body.
+	if current_level == 3:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_03.tscn")
 
 
 func _on_level_04_pressed():
-	pass # Replace with function body.
+	if current_level == 4:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_04.tscn")
 
 
 func _on_level_05_pressed():
-	pass # Replace with function body.
+	if current_level == 5:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_05.tscn")
 
 
 func _on_level_06_pressed():
-	pass # Replace with function body.
+	if current_level == 6:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_06.tscn")
 
 
 func _on_level_07_pressed():
-	pass # Replace with function body.
+	if current_level == 7:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_07.tscn")
 
 
 func _on_level_08_pressed():
-	pass # Replace with function body.
+	if current_level == 8:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_08.tscn")
 
 
 func _on_level_09_pressed():
-	pass # Replace with function body.
+	if current_level == 9:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_09.tscn")
 
 
 func _on_level_10_pressed():
-	pass # Replace with function body.
+	if current_level == 10:
+		transition.visible = true
+		transition.change_scene("res://src/levels/level_10.tscn")

@@ -3,10 +3,15 @@ extends Control
 
 @onready var background_terrain = $"background/01/texture"
 @onready var transition = $transition
+@onready var current_value = $score/current_container/current_value
+@onready var record_value = $score/record_container/record_value
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	current_value.text = str("%06d" % Global.player_score)
+	record_value.text = str("%06d" % Global.player_record)
+	
 	var current_level = Global.get_last_level()
 	if background_terrain != null:
 		if current_level <= 5:

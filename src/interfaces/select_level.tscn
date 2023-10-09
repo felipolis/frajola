@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqkgnid0unbgu"]
+[gd_scene load_steps=21 format=3 uid="uid://bqkgnid0unbgu"]
 
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_1kp71"]
 [ext_resource type="Script" path="res://src/scripts/select_level.gd" id="1_27lne"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="10_kb8ah"]
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="11_80vwj"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="12_h8qnn"]
+[ext_resource type="AudioStream" uid="uid://cr488cpkr1ecs" path="res://src/assets/sounds/select_menu.mp3" id="13_hakam"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l8cxl"]
 shader = ExtResource("3_n1njn")
@@ -238,6 +239,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("12_h8qnn")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_hakam")
+autoplay = true
 
 [connection signal="pressed" from="levels/level_01" to="." method="_on_level_01_pressed"]
 [connection signal="pressed" from="levels/level_02" to="." method="_on_level_02_pressed"]

@@ -11,7 +11,7 @@ extends CharacterBody2D
 
 enum PatrolState { FREE_PATROL, LIMITED_PATROL, IDLE }
 
-const SPEED = 700.0
+@export var SPEED = 700.0
 const JUMP_VELOCITY = -400.0
 
 var direction := 1

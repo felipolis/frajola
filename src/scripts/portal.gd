@@ -1,7 +1,6 @@
 extends Area2D
 
 @onready var transition = $"../transition"
-@export var next_level = ""
 @onready var frajola = $"../frajola"
 
 signal frajola_has_passed

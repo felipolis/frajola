@@ -14,6 +14,11 @@ var knockback_vector := Vector2.ZERO
 @onready var collision = $collision
 @onready var hitbox = $hurtbox/collision
 @onready var hurtbox_collision = $hurtbox/collision
+@export var ball_speed: float = 400
+@onready var ball_point = $ball_point
+@onready var jump_sfx = $jumpSFX
+
+var ball_res = preload("res://src/prefabs/ball.tscn")
 
 signal frajola_has_died
 
@@ -25,6 +30,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_FORCE
 		is_jumping = true
+		jump_sfx.play()
 	elif is_on_floor():
 		is_jumping = false
 	
@@ -32,6 +38,20 @@ func _physics_process(delta):
 		collision.disabled = true
 		await get_tree().create_timer(0.07).timeout
 		collision.disabled = false
+	
+	if Input.is_action_just_pressed("atack"):
+		if Global.player_bullets > 0:
+			var ball: RigidBody2D = ball_res.instantiate()
+			ball.position = ball_point.get_global_position()
+			ball.rotation = rotation
+			if animation.scale.x == 1:
+				ball.apply_impulse(Vector2(ball_speed,0).rotated(rotation), Vector2())
+			else:
+				ball.apply_impulse(Vector2(-ball_speed,0).rotated(rotation), Vector2())
+			get_tree().get_root().add_child(ball)
+			Global.player_bullets -= 1
+		else:
+			pass
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -44,9 +64,11 @@ func _physics_process(delta):
 		if direction == 1:
 			$ray_right.position.x = 5
 			$ray_left.position.x = -13
+			ball_point.position.x = 5
 		elif direction == -1:
 			$ray_right.position.x = 13
 			$ray_left.position.x = -5
+			ball_point.position.x = -5
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
