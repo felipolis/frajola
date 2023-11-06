@@ -740,7 +740,6 @@ texture = ExtResource("17_2k245")
 centered = false
 
 [node name="controls" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ui_left" type="TouchScreenButton" parent="controls"]
 position = Vector2(7, 535)

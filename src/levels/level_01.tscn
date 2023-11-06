@@ -547,7 +547,6 @@ position = Vector2(744, 408)
 position = Vector2(768, 408)
 
 [node name="controls" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="ui_left" type="TouchScreenButton" parent="controls"]
 position = Vector2(7, 535)
