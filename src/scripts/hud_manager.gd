@@ -30,11 +30,14 @@ func _process(delta):
 		emit_signal("time_is_up")
 
 func _on_clock_timer_timeout():
-	if seconds == 0:
-		if minutes > 0:
-			minutes -= 1
-			seconds = 60
-	seconds -= 1
+	if minutes == 0 and seconds == 0:
+		pass
+	else:
+		if seconds == 0:
+			if minutes > 0:
+				minutes -= 1
+				seconds = 60
+		seconds -= 1
 	timer_counter.text = str("%02d" % minutes) + ":" + str("%02d" % seconds)
 
 func reset_clock_timer():

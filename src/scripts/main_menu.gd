@@ -37,8 +37,12 @@ func _on_select_level_button_pressed():
 	transition.visible = true
 	transition.change_scene("res://src/interfaces/select_level.tscn")
 
-func _on_options_button_pressed():
-	pass # Replace with function body.
+
+func _on_credits_button_pressed():
+	transition.visible = true
+	transition.change_scene("res://src/interfaces/credits.tscn")
 
 func _on_quit_button_pressed():
 	get_tree().quit()
+
+

@@ -20,6 +20,9 @@ var distance_travelled := 0.0  # Variável para rastrear a distância percorrida
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _ready():
+	if patrol_state == PatrolState.IDLE:
+		anim.play("idle")
 
 func _physics_process(delta):
 	if patrol_state == PatrolState.FREE_PATROL:
@@ -55,8 +58,8 @@ func _physics_process(delta):
 			distance_travelled = 0.0
 
 		move_and_slide()
-	else:
-		anim.play("idle")
+	elif patrol_state == PatrolState.IDLE:
+		#anim.play("idle")
 		# Adicione a gravidade.
 		if not is_on_floor():
 			velocity.y += gravity * delta

@@ -778,6 +778,7 @@ position = Vector2(1028, 535)
 scale = Vector2(3.25, 3.25)
 texture_normal = ExtResource("26_0obr0")
 texture_pressed = ExtResource("27_wiix3")
+action = "atack"
 visibility_mode = 1
 
 [node name="HUD" type="CanvasLayer" parent="."]

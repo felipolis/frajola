@@ -665,8 +665,7 @@ libraries = {
 }
 
 [node name="lava_area" type="Area2D" parent="."]
-visible = false
-position = Vector2(1151, 568)
+position = Vector2(255, 497)
 collision_layer = 2
 script = ExtResource("21_7trrk")
 

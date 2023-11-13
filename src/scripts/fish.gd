@@ -1,4 +1,5 @@
 extends Area2D
+@onready var fish_sfx = $fishSFX
 
 var coins := 1
 
@@ -14,6 +15,7 @@ func _process(delta):
 
 func _on_body_entered(body):
 	$anim.play("collect")
+	fish_sfx.play()
 	await $collision.call_deferred("queue_free")
 	Global.player_bullets += coins
 

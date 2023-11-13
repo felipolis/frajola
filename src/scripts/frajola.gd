@@ -17,10 +17,20 @@ var knockback_vector := Vector2.ZERO
 @export var ball_speed: float = 400
 @onready var ball_point = $ball_point
 @onready var jump_sfx = $jumpSFX
+@onready var hurt_sfx = $hurtSFX
+@onready var control = $"../HUD/control"
+@onready var shot_sfx = $shotSFX
+
 
 var ball_res = preload("res://src/prefabs/ball.tscn")
 
 signal frajola_has_died
+
+func _ready():
+	control.time_is_up.connect(kill)
+
+func kill():
+	emit_signal("frajola_has_died")
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,6 +51,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("atack"):
 		if Global.player_bullets > 0:
+			shot_sfx.play()
 			var ball: RigidBody2D = ball_res.instantiate()
 			ball.position = ball_point.get_global_position()
 			ball.rotation = rotation
@@ -108,7 +119,7 @@ func _on_hurtbox_body_entered(body):
 		
 
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	
+	hurt_sfx.play()
 	if Global.player_life > 0:
 		Global.player_life -= 1
 		

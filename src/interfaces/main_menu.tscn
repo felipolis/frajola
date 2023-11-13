@@ -145,9 +145,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 32.0
-offset_top = -324.0
+offset_top = -268.0
 offset_right = 504.0
-offset_bottom = -28.0
+offset_bottom = -32.0
 grow_vertical = 0
 
 [node name="new_game_button" type="Button" parent="buttons"]
@@ -162,13 +162,7 @@ theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Select Level"
 
-[node name="options_button" type="Button" parent="buttons"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("7_tl57e")
-theme_override_font_sizes/font_size = 47
-text = "Options"
-
-[node name="options_credits" type="Button" parent="buttons"]
+[node name="credits_button" type="Button" parent="buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
@@ -197,9 +191,9 @@ script = ExtResource("11_1jm2i")
 [node name="score" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 32.0
-offset_top = 264.0
+offset_top = 304.0
 offset_right = 269.0
-offset_bottom = 320.0
+offset_bottom = 360.0
 
 [node name="current_container" type="HBoxContainer" parent="score"]
 layout_mode = 2
@@ -247,6 +241,5 @@ autoplay = true
 
 [connection signal="pressed" from="buttons/new_game_button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="buttons/select_level_button" to="." method="_on_select_level_button_pressed"]
-[connection signal="pressed" from="buttons/options_button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="buttons/options_credits" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="buttons/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="buttons/quit_button" to="." method="_on_quit_button_pressed"]
