@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqkgnid0unbgu"]
+[gd_scene load_steps=24 format=3 uid="uid://bqkgnid0unbgu"]
 
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_1kp71"]
 [ext_resource type="Script" path="res://src/scripts/select_level.gd" id="1_27lne"]
@@ -13,6 +13,9 @@
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="11_80vwj"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="12_h8qnn"]
 [ext_resource type="AudioStream" uid="uid://cr488cpkr1ecs" path="res://src/assets/sounds/select_menu.mp3" id="13_hakam"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="14_4ki5g"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="15_cbnh4"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="16_8joi8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l8cxl"]
 shader = ExtResource("3_n1njn")
@@ -226,6 +229,16 @@ sprite_frames = SubResource("SpriteFrames_h2jy2")
 animation = &"lincking"
 autoplay = "lincking"
 
+[node name="controls" type="CanvasLayer" parent="."]
+
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1096, 46)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("14_4ki5g")
+texture_pressed = ExtResource("15_cbnh4")
+visibility_mode = 1
+script = ExtResource("16_8joi8")
+
 [node name="transition" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("10_kb8ah")
@@ -255,3 +268,4 @@ autoplay = true
 [connection signal="pressed" from="levels/level_09" to="." method="_on_level_09_pressed"]
 [connection signal="pressed" from="levels/level_10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="back_button/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]

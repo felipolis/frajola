@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cd474s4eqws6t"]
+[gd_scene load_steps=50 format=3 uid="uid://cd474s4eqws6t"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_mjdke"]
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="2_8ri72"]
@@ -26,8 +26,11 @@
 [ext_resource type="Texture2D" uid="uid://dd3lneny3vjvr" path="res://src/assets/controls/ui_buttons_arrow_up_PRESSED.png" id="25_8f6hp"]
 [ext_resource type="Texture2D" uid="uid://w88j3bc4a5k" path="res://src/assets/controls/ui_buttons_atack_NORMAL.png" id="26_0obr0"]
 [ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="27_wiix3"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="27_xao73"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="28_3qvyd"]
 [ext_resource type="Script" path="res://src/scripts/hud_manager.gd" id="28_25cam"]
 [ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="29_7ci15"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="29_g1x2q"]
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="30_oi831"]
 [ext_resource type="Texture2D" uid="uid://dd76ta0l8oo6x" path="res://src/assets/ui/life-counter-icon.png" id="31_ugn1d"]
 [ext_resource type="PackedScene" uid="uid://c3ppu20ikekpy" path="res://src/interfaces/victory_menu.tscn" id="32_ohdot"]
@@ -781,6 +784,14 @@ texture_pressed = ExtResource("27_wiix3")
 action = "atack"
 visibility_mode = 1
 
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1073, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("27_xao73")
+texture_pressed = ExtResource("28_3qvyd")
+visibility_mode = 1
+script = ExtResource("29_g1x2q")
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="clock_timer" type="Timer" parent="HUD"]
@@ -955,4 +966,5 @@ autoplay = true
 [connection signal="body_entered" from="spikes_areas/spikes_area10" to="spikes_areas/spikes_area10" method="_on_body_entered"]
 [connection signal="body_entered" from="spikes_areas/spikes_area11" to="spikes_areas/spikes_area11" method="_on_body_entered"]
 [connection signal="body_entered" from="spikes_areas/spikes_area12" to="spikes_areas/spikes_area12" method="_on_body_entered"]
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]
 [connection signal="timeout" from="HUD/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

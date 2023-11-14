@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwif60mf5bpco"]
+[gd_scene load_steps=10 format=3 uid="uid://bwif60mf5bpco"]
 
 [ext_resource type="Script" path="res://src/scripts/credits.gd" id="1_s656t"]
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="2_rxvd5"]
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="3_y8qeb"]
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="4_gmctf"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="5_th2nd"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="6_1c7wx"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="7_ev8vf"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="8_42o27"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tnvvt"]
 shader = ExtResource("4_gmctf")
@@ -54,7 +57,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 0.941176, 0, 1)
 theme_override_fonts/font = ExtResource("2_rxvd5")
 theme_override_font_sizes/font_size = 32
-text = "Created by"
+text = "Art & Code"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="credits/created"]
@@ -122,6 +125,12 @@ theme_override_fonts/font = ExtResource("2_rxvd5")
 text = "Main Menu _______________ CodeManu (opengameart.org)"
 horizontal_alignment = 1
 
+[node name="Label6" type="Label" parent="credits/music"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_rxvd5")
+text = "Controls Menu ___________ CodeManu (opengameart.org)"
+horizontal_alignment = 1
+
 [node name="Label3" type="Label" parent="credits/music"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rxvd5")
@@ -140,7 +149,7 @@ theme_override_fonts/font = ExtResource("2_rxvd5")
 text = "Mushroom World _________ CodeManu (opengameart.org)"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="btn_container" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -154,11 +163,21 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="new_game_button" type="Button" parent="VBoxContainer"]
+[node name="jump" type="Button" parent="btn_container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_rxvd5")
 theme_override_font_sizes/font_size = 32
-text = "PULAR"
+text = "BACK TO MAIN MENU"
+
+[node name="controls" type="CanvasLayer" parent="."]
+
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1096, 46)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("6_1c7wx")
+texture_pressed = ExtResource("7_ev8vf")
+visibility_mode = 1
+script = ExtResource("8_42o27")
 
 [node name="transition" type="CanvasLayer" parent="."]
 visible = false
@@ -174,4 +193,5 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("5_th2nd")
 
-[connection signal="pressed" from="VBoxContainer/new_game_button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="btn_container/jump" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]

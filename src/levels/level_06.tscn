@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dy1kri1xnsmem"]
+[gd_scene load_steps=62 format=3 uid="uid://dy1kri1xnsmem"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_frmhd"]
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="2_mj175"]
@@ -32,9 +32,12 @@
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="25_c7hef"]
 [ext_resource type="Texture2D" uid="uid://dd76ta0l8oo6x" path="res://src/assets/ui/life-counter-icon.png" id="26_dd6oo"]
 [ext_resource type="PackedScene" uid="uid://c3ppu20ikekpy" path="res://src/interfaces/victory_menu.tscn" id="27_8uw6y"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="28_m05ja"]
 [ext_resource type="PackedScene" uid="uid://ccgqxkwf5npbv" path="res://src/interfaces/death_menu.tscn" id="28_xo3dv"]
 [ext_resource type="PackedScene" uid="uid://cqehrcaxvg2is" path="res://src/interfaces/pause_menu.tscn" id="29_c4og2"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="29_m4fat"]
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="30_qynb4"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="30_yl4tp"]
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="31_ufqdc"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="32_jp6fq"]
 [ext_resource type="Script" path="res://src/scripts/water_area.gd" id="34_lqlpl"]
@@ -741,6 +744,14 @@ texture_pressed = ExtResource("22_km88x")
 action = "atack"
 visibility_mode = 1
 
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1073, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("28_m05ja")
+texture_pressed = ExtResource("29_m4fat")
+visibility_mode = 1
+script = ExtResource("30_yl4tp")
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="clock_timer" type="Timer" parent="HUD"]
@@ -977,6 +988,7 @@ stream = ExtResource("39_g6rrv")
 volume_db = -15.088
 autoplay = true
 
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]
 [connection signal="timeout" from="HUD/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="lava_areas/lava_area3" to="lava_areas/lava_area3" method="_on_body_entered"]
 [connection signal="body_entered" from="lava_areas/lava_area4" to="lava_areas/lava_area4" method="_on_body_entered"]

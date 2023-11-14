@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bitym7e4dfdl0"]
+[gd_scene load_steps=48 format=3 uid="uid://bitym7e4dfdl0"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_l5kir"]
 [ext_resource type="Texture2D" uid="uid://ddc71dycmdsad" path="res://src/assets/tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_ybbpa"]
@@ -15,8 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="17_08byy"]
 [ext_resource type="Texture2D" uid="uid://bsf7cwoubqa" path="res://src/assets/tilesets/3 - Others/Lava_frames (16 x 32).png" id="20_ce3sr"]
 [ext_resource type="Texture2D" uid="uid://cld8ryadwotjk" path="res://src/assets/controls/ui_buttons_arrow_left_NORMAL.png" id="22_n3ve6"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="22_s7aq2"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="23_lejfi"]
 [ext_resource type="Texture2D" uid="uid://cn33f25rt64fs" path="res://src/assets/controls/ui_buttons_arrow_left_PRESSED.png" id="23_rbkue"]
 [ext_resource type="Texture2D" uid="uid://cckxfxo3h2gr2" path="res://src/assets/controls/ui_buttons_arrow_right_NORMAL.png" id="24_gjfyp"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="24_ppe1l"]
 [ext_resource type="Texture2D" uid="uid://0gi3a2tncf8p" path="res://src/assets/controls/ui_buttons_arrow_right_PRESSED.png" id="25_6q3xo"]
 [ext_resource type="Texture2D" uid="uid://bt2bbi5ph3ygu" path="res://src/assets/controls/ui_buttons_arrow_up_NORMAL.png" id="26_ccdsr"]
 [ext_resource type="Texture2D" uid="uid://dm45xfbei3k81" path="res://src/assets/controls/ui_buttons_pause_NORMAL.png" id="27_h40r0"]
@@ -572,6 +575,14 @@ texture_pressed = ExtResource("28_cqrme")
 action = "ui_cancel"
 visibility_mode = 1
 
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1073, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("22_s7aq2")
+texture_pressed = ExtResource("23_lejfi")
+visibility_mode = 1
+script = ExtResource("24_ppe1l")
+
 [node name="ui_up" type="TouchScreenButton" parent="controls"]
 position = Vector2(904, 535)
 scale = Vector2(3.25, 3.25)
@@ -750,4 +761,5 @@ stream = ExtResource("36_lc2yo")
 volume_db = -15.088
 autoplay = true
 
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]
 [connection signal="timeout" from="HUD/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

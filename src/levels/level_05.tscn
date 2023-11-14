@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://qb33telwvryl"]
+[gd_scene load_steps=51 format=3 uid="uid://qb33telwvryl"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_dt32n"]
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="2_3pnqi"]
@@ -21,9 +21,12 @@
 [ext_resource type="Texture2D" uid="uid://dm45xfbei3k81" path="res://src/assets/controls/ui_buttons_pause_NORMAL.png" id="22_ghp66"]
 [ext_resource type="Texture2D" uid="uid://bvpqk2o0wqsx" path="res://src/assets/controls/ui_buttons_pause_PRESSED.png.png" id="23_pcdgo"]
 [ext_resource type="Texture2D" uid="uid://bt2bbi5ph3ygu" path="res://src/assets/controls/ui_buttons_arrow_up_NORMAL.png" id="24_x57hn"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="25_l0lby"]
 [ext_resource type="Texture2D" uid="uid://dd3lneny3vjvr" path="res://src/assets/controls/ui_buttons_arrow_up_PRESSED.png" id="25_u4a0i"]
 [ext_resource type="Texture2D" uid="uid://w88j3bc4a5k" path="res://src/assets/controls/ui_buttons_atack_NORMAL.png" id="26_778ls"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="26_gpbvn"]
 [ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="27_5mliv"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="27_vfqcf"]
 [ext_resource type="Script" path="res://src/scripts/hud_manager.gd" id="28_mfw0g"]
 [ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="29_233ty"]
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="30_p5c34"]
@@ -981,6 +984,14 @@ texture_pressed = ExtResource("27_5mliv")
 action = "atack"
 visibility_mode = 1
 
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1073, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("25_l0lby")
+texture_pressed = ExtResource("26_gpbvn")
+visibility_mode = 1
+script = ExtResource("27_vfqcf")
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="clock_timer" type="Timer" parent="HUD"]
@@ -1157,4 +1168,5 @@ autoplay = true
 [connection signal="body_entered" from="water_areas/water_area12" to="water_areas/water_area12" method="_on_body_entered"]
 [connection signal="body_entered" from="water_areas/water_area13" to="water_areas/water_area13" method="_on_body_entered"]
 [connection signal="body_entered" from="water_areas/water_area14" to="water_areas/water_area14" method="_on_body_entered"]
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]
 [connection signal="timeout" from="HUD/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]

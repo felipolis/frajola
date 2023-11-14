@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://hiyw54obfhn"]
+[gd_scene load_steps=23 format=3 uid="uid://hiyw54obfhn"]
 
 [ext_resource type="Script" path="res://src/scripts/main_menu.gd" id="1_3s4d2"]
 [ext_resource type="Texture2D" uid="uid://c5f4141nir1o0" path="res://src/assets/tilesets/1 - Grassland/background/4 - Sky_color.png" id="1_u2n3n"]
@@ -12,6 +12,9 @@
 [ext_resource type="Shader" path="res://src/shaders/transition.gdshader" id="10_gvmmh"]
 [ext_resource type="Script" path="res://src/scripts/color_rect.gd" id="11_1jm2i"]
 [ext_resource type="AudioStream" uid="uid://42th6de48rrr" path="res://src/assets/sounds/main_menu.mp3" id="12_r1hko"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="13_ioudl"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="14_bg0q4"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="15_4dyft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r36pv"]
 shader = ExtResource("3_5mnp3")
@@ -162,6 +165,12 @@ theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Select Level"
 
+[node name="controls_button" type="Button" parent="buttons"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 47
+text = "Controls"
+
 [node name="credits_button" type="Button" parent="buttons"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
@@ -173,6 +182,16 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Quit"
+
+[node name="controls" type="CanvasLayer" parent="."]
+
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1096, 46)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("13_ioudl")
+texture_pressed = ExtResource("14_bg0q4")
+visibility_mode = 1
+script = ExtResource("15_4dyft")
 
 [node name="transition" type="CanvasLayer" parent="."]
 visible = false
@@ -191,9 +210,9 @@ script = ExtResource("11_1jm2i")
 [node name="score" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 32.0
-offset_top = 304.0
+offset_top = 264.0
 offset_right = 269.0
-offset_bottom = 360.0
+offset_bottom = 320.0
 
 [node name="current_container" type="HBoxContainer" parent="score"]
 layout_mode = 2
@@ -241,5 +260,7 @@ autoplay = true
 
 [connection signal="pressed" from="buttons/new_game_button" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="buttons/select_level_button" to="." method="_on_select_level_button_pressed"]
+[connection signal="pressed" from="buttons/controls_button" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="buttons/credits_button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="buttons/quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]

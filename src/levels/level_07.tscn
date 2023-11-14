@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bevys470qo4ei"]
+[gd_scene load_steps=57 format=3 uid="uid://bevys470qo4ei"]
 
 [ext_resource type="Script" path="res://src/scripts/level_01.gd" id="1_4c6bk"]
 [ext_resource type="Texture2D" uid="uid://c8boxi6xidvnq" path="res://src/assets/tilesets/3 - Others/Water_frames (16 x 32).png" id="2_ns6y1"]
@@ -27,9 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://cm8ojh8mowiu7" path="res://src/assets/controls/ui_buttons_atack_PRESSED.png" id="23_f8u5r"]
 [ext_resource type="Script" path="res://src/scripts/hud_manager.gd" id="24_px4xa"]
 [ext_resource type="Texture2D" uid="uid://bwfweef8bc0wv" path="res://src/assets/ui/ball-counter-icon.png" id="25_yu5i4"]
+[ext_resource type="Texture2D" uid="uid://d38yscvjconym" path="res://src/assets/controls/ui_buttons_full_NORMAL.png" id="26_4fy0a"]
 [ext_resource type="FontFile" uid="uid://jv0itu46v2vp" path="res://src/assets/fonts/RevMiniPixel.ttf" id="26_8yjdo"]
+[ext_resource type="Texture2D" uid="uid://c1ndwe3m6t5xw" path="res://src/assets/controls/ui_buttons_full_PRESSED.png.png" id="27_3q0fk"]
 [ext_resource type="Texture2D" uid="uid://dd76ta0l8oo6x" path="res://src/assets/ui/life-counter-icon.png" id="27_g7xfk"]
 [ext_resource type="PackedScene" uid="uid://c3ppu20ikekpy" path="res://src/interfaces/victory_menu.tscn" id="28_3uctx"]
+[ext_resource type="Script" path="res://src/scripts/fullscreen.gd" id="28_4gpgi"]
 [ext_resource type="PackedScene" uid="uid://ccgqxkwf5npbv" path="res://src/interfaces/death_menu.tscn" id="29_aioiu"]
 [ext_resource type="PackedScene" uid="uid://cqehrcaxvg2is" path="res://src/interfaces/pause_menu.tscn" id="30_comar"]
 [ext_resource type="Script" path="res://src/scripts/transition.gd" id="31_qslw4"]
@@ -759,6 +762,14 @@ texture_pressed = ExtResource("23_f8u5r")
 action = "atack"
 visibility_mode = 1
 
+[node name="ui_fullscreen" type="TouchScreenButton" parent="controls"]
+position = Vector2(1073, 58)
+scale = Vector2(0.968749, 0.968749)
+texture_normal = ExtResource("26_4fy0a")
+texture_pressed = ExtResource("27_3q0fk")
+visibility_mode = 1
+script = ExtResource("28_4gpgi")
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="clock_timer" type="Timer" parent="HUD"]
@@ -1006,5 +1017,6 @@ stream = ExtResource("40_pedoe")
 volume_db = -15.088
 autoplay = true
 
+[connection signal="pressed" from="controls/ui_fullscreen" to="controls/ui_fullscreen" method="_on_pressed"]
 [connection signal="timeout" from="HUD/clock_timer" to="HUD/control" method="_on_clock_timer_timeout"]
 [connection signal="body_entered" from="lava_areas/lava_area4" to="lava_areas/lava_area4" method="_on_body_entered"]
