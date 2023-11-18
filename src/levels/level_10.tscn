@@ -466,7 +466,7 @@ layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(1179663, 65543, 1, 1179664, 65543, 1, 1507348, 65543, 1, 1572885, 65543, 1, 1638422, 65543, 1, 1572892, 65543, 1, 1572893, 65543, 1, 1441838, 65543, 1, 1376303, 65543, 1, 1769534, 65543, 1, 1703999, 65543, 1, 1048643, 65543, 1, 917572, 65543, 1, 852044, 65543, 1, 852045, 65543, 1, 786506, 65543, 1, 786507, 65543, 1, 1310801, 65543, 1, 1769555, 65543, 1, 2097241, 65543, 1, 2162776, 65543, 1, 2162775, 65543, 1, 2162774, 65543, 1, 2031701, 65543, 1, 1769563, 65543, 1, 720992, 65543, 1, 655457, 65543, 1, 1114221, 65543, 1, 1245294, 65543, 1, 1376367, 65543, 1, 1376376, 65543, 1, 1376377, 65543, 1, 1704049, 65543, 1, 1704050, 65543, 1, 1638515, 65543, 1, 1376386, 65543, 1, 1376387, 65543, 1, 1245332, 65543, 1, 1179797, 65543, 1, 1114262, 65543, 1, 458915, 65543, 1, 458916, 65543, 1, 524453, 65543, 1, 1114285, 65543, 1, 1048748, 65543, 1, 917656, 65543, 1, 852121, 65543, 1, 1507472, 65543, 1, 1900569, 65543, 1)
 
 [node name="frajola" parent="." instance=ExtResource("8_xo4uk")]
-position = Vector2(317, 321)
+position = Vector2(888, 304)
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(500, 236)
@@ -714,6 +714,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_wvbwn")
+default_minutes = 9
 default_seconds = 59
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
@@ -839,6 +840,7 @@ vertical_alignment = 1
 
 [node name="victory_menu" parent="." instance=ExtResource("28_lk40v")]
 next_level = "res://src/interfaces/credits.tscn"
+last_level = true
 
 [node name="death_menu" parent="." instance=ExtResource("29_6kvop")]
 

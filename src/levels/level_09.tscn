@@ -599,7 +599,7 @@ position = Vector2(2730, 194)
 scale = Vector2(5, 5)
 
 [node name="frajola" parent="." instance=ExtResource("8_m8e0s")]
-position = Vector2(197, 465)
+position = Vector2(189, 476)
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(500, 236)
@@ -787,6 +787,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_is74d")
+default_minutes = 3
 default_seconds = 59
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
@@ -911,6 +912,7 @@ text = "000000"
 vertical_alignment = 1
 
 [node name="victory_menu" parent="." instance=ExtResource("28_ta8gt")]
+next_level = "res://src/levels/level_10.tscn"
 
 [node name="death_menu" parent="." instance=ExtResource("29_5vmar")]
 

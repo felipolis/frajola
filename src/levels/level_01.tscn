@@ -612,7 +612,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("30_aplqi")
-default_seconds = 59
+default_minutes = 0
+default_seconds = 30
 
 [node name="container" type="MarginContainer" parent="HUD/control"]
 layout_mode = 1

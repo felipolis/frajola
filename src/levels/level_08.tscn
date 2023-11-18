@@ -566,7 +566,7 @@ position = Vector2(2419, 58.0001)
 scale = Vector2(5, 5)
 
 [node name="frajola" parent="." instance=ExtResource("8_kq4md")]
-position = Vector2(192, 472)
+position = Vector2(184, 472)
 
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(500, 236)
@@ -761,6 +761,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("24_fkjgy")
+default_minutes = 2
 default_seconds = 59
 
 [node name="container" type="MarginContainer" parent="HUD/control"]

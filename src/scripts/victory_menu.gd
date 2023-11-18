@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var transition = $"../transition"
 @export var next_level = ""
+@export var last_level = false
 @onready var portal = $"../portal"
 @onready var boss = $"../boss"
 
@@ -23,6 +24,9 @@ func victory():
 	# TODO: Setar o score record caso seja a ultima fase
 	Global.set_backup()
 	visible = true
+	
+	if last_level:
+		Global.has_finished()
 
 func _on_next_btn_pressed():
 	if next_level:

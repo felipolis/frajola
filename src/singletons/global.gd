@@ -1,10 +1,10 @@
 extends Node
 
 var current_scene = null
-var levels = [true, false, false, false, false, false, false, false, false, false]
+var levels = [true, true, true, true, true, true, true, true, true, true]
 
 var player_life = 7
-var player_bullets = 0
+var player_bullets = 20
 var player_score = 0
 var player_record = 0
 
@@ -36,18 +36,9 @@ func set_backup():
 			levels[level] = true
 			break
 	
-	verify_if_finished()
-	
-func verify_if_finished():
-	var has_finished = true
-	for level in levels.size():
-		if not levels[level]:
-			has_finished = false
-			break
-	
-	if has_finished:
-		_reset_game()
-		player_record = backup_score
+func has_finished():
+	_reset_game()
+	player_record = backup_score
 
 func goto_scene(path):
 	call_deferred("_deferred_goto_scene", path)
