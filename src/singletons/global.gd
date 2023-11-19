@@ -1,14 +1,14 @@
 extends Node
 
 var current_scene = null
-var levels = [true, true, true, true, true, true, true, true, true, true]
+var levels = [true, false, false, false, false, false, false, false, false, false]
 
 var player_life = 7
-var player_bullets = 20
+var player_bullets = 0
 var player_score = 0
 var player_record = 0
 
-var backup_lives = 7
+var backup_lives = 0
 var backup_bullets = 0
 var backup_score = 0
 
