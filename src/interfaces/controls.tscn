@@ -27,7 +27,7 @@ shader_parameter/threshold = 0.0
 shader_parameter/line_color_a = Color(1, 1, 1, 1)
 shader_parameter/line_color_b = Color(0, 0, 0, 1)
 
-[node name="controls" type="Control"]
+[node name="instructions" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,13 +73,158 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 128.0
-offset_top = 200.0
-offset_right = -128.0
-offset_bottom = -200.0
+offset_left = 192.0
+offset_top = 192.0
+offset_right = -192.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.498039)
+
+[node name="main" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -356.0
+offset_top = -125.0
+offset_right = 356.0
+offset_bottom = 273.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 32
+
+[node name="control" type="VBoxContainer" parent="main"]
+layout_mode = 2
+
+[node name="jump" type="HBoxContainer" parent="main/control"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="main/control/jump"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "JUMP: "
+
+[node name="value" type="Label" parent="main/control/jump"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "W, ARROW_UP, SPACE"
+
+[node name="run" type="HBoxContainer" parent="main/control"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="main/control/run"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "RUN: "
+
+[node name="value" type="Label" parent="main/control/run"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "D or ARROW_RIGHT or A or ARROW_LEFT"
+
+[node name="atack" type="HBoxContainer" parent="main/control"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="main/control/atack"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "ATACK: "
+
+[node name="value" type="Label" parent="main/control/atack"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "SHIFT or P"
+
+[node name="pause" type="HBoxContainer" parent="main/control"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="main/control/pause"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "PAUSE: "
+
+[node name="value" type="Label" parent="main/control/pause"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "ESC"
+
+[node name="fullscreen" type="HBoxContainer" parent="main/control"]
+layout_mode = 2
+
+[node name="label" type="Label" parent="main/control/fullscreen"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "FULLSCREEN: "
+
+[node name="value" type="Label" parent="main/control/fullscreen"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "F11"
+
+[node name="instructions" type="VBoxContainer" parent="main"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="value" type="Label" parent="main/instructions"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_iewec")
+theme_override_font_sizes/font_size = 32
+text = "Your goal in this game is to go through all
+the levels without losing your 7 lives. If you
+die, you will restart from the beginning."
+horizontal_alignment = 3
 
 [node name="title" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -98,133 +243,9 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
 theme_override_fonts/font = ExtResource("6_iewec")
 theme_override_font_sizes/font_size = 64
-text = "Controls"
+text = "hOW TO PLAY"
 horizontal_alignment = 1
 uppercase = true
-
-[node name="score" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -81.0
-offset_top = -25.0
-offset_right = 81.0
-offset_bottom = 25.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="jump" type="HBoxContainer" parent="score"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="score/jump"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "JUMP: "
-
-[node name="value" type="Label" parent="score/jump"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "W, ARROW_UP, SPACE"
-
-[node name="run" type="HBoxContainer" parent="score"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="score/run"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "RUN: "
-
-[node name="value" type="Label" parent="score/run"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "D or ARROW_RIGHT or A or ARROW_LEFT"
-
-[node name="atack" type="HBoxContainer" parent="score"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="score/atack"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "ATACK: "
-
-[node name="value" type="Label" parent="score/atack"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "SHIFT or P"
-
-[node name="pause" type="HBoxContainer" parent="score"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="score/pause"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "PAUSE: "
-
-[node name="value" type="Label" parent="score/pause"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "ESC"
-
-[node name="fullscreen" type="HBoxContainer" parent="score"]
-layout_mode = 2
-
-[node name="label" type="Label" parent="score/fullscreen"]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "FULLSCREEN: "
-
-[node name="value" type="Label" parent="score/fullscreen"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("6_iewec")
-theme_override_font_sizes/font_size = 32
-text = "F11"
 
 [node name="back_button" type="HBoxContainer" parent="."]
 layout_mode = 0

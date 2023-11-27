@@ -124,7 +124,7 @@ func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
 		Global.player_life -= 1
 		
 	if Global.player_life <= 0:
-		queue_free()
+		# queue_free()
 		emit_signal("frajola_has_died")
 	
 	if knockback_force != Vector2.ZERO:

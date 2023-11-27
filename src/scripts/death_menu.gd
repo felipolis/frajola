@@ -14,6 +14,7 @@ func _process(delta):
 	pass
 
 func game_over():
+	frajola.queue_free()
 	visible = true
 
 func _on_restart_btn_pressed():

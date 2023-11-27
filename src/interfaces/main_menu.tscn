@@ -169,7 +169,7 @@ text = "Select Level"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
-text = "Controls"
+text = "Instructions"
 
 [node name="credits_button" type="Button" parent="buttons"]
 layout_mode = 2
@@ -182,6 +182,27 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("7_tl57e")
 theme_override_font_sizes/font_size = 47
 text = "Quit"
+
+[node name="made_at" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="subtitle" type="Label" parent="made_at"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_tl57e")
+theme_override_font_sizes/font_size = 16
+text = "UTFPR 2023"
+uppercase = true
 
 [node name="controls" type="CanvasLayer" parent="."]
 

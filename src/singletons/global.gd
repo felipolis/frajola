@@ -21,6 +21,10 @@ func _reset_game():
 	player_life = 7
 	player_bullets = 0
 	player_score = 0
+	
+	backup_lives = 0
+	backup_bullets = 0
+	backup_score = 0
 
 func get_backup():
 	player_life = backup_lives
